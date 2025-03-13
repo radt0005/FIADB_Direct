@@ -5,8 +5,12 @@ FIAdb_connect <- function(input_dbname="fiadb"){
   # loads the PostgreSQL driver
   drv <- dbDriver("PostgreSQL")
   
-  con <- DBI::dbConnect(drv,
-                        dbname=input_dbname)
+  con <- dbConnect(drv,
+                   dbname= input_dbname,
+                   host= "localhost",
+                   port= 5432,
+                   user= "postgres",
+                   password= 'FIADB_Direct') # password= rstudioapi::askForPassword()
   
   if (!exists("con")) {
     
@@ -18,9 +22,9 @@ FIAdb_connect <- function(input_dbname="fiadb"){
     con <- dbConnect(drv,
                      dbname= input_dbname,
                      host= "localhost",
-                     port= 5433,
+                     port= 5432,
                      user= "postgres",
-                     password= rstudioapi::askForPassword()) 
+                     password= 'FIADB_Direct') 
   }
   con
 }

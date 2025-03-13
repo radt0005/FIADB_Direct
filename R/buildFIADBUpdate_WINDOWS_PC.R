@@ -6,7 +6,7 @@
 # and/or the database has been previously installed 
 is.first.install = TRUE
 is.downloaded = FALSE
-setwd(path.expand('C:\\Users\\pradtke\\Rscripts\\test'))
+setwd(path.expand('D:\\temp\\FIADB_Direct'))
 # setwd(path.expand('~\\Rscripts\\buildFIADB'))
 # can use testdb for beta installation and fiadb for alpha
 dbname <- 'fiadb'

@@ -1,3 +1,7 @@
+if(!exists('dbname')){
+  print(paste("Accessing database fiadb.\n"))
+  dbname = 'fiadb'
+}
 if(!exists('data_path')){
   stop(paste0('Variable "data_path" must be set. Example code follows: 
               \ndata_path = file.path("/media/rstudio/data/Rscripts/Working/")'))

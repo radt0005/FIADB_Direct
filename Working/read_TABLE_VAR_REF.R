@@ -20,7 +20,11 @@ source(file.path(data_path,"FIAdb_connect.R"))#Aakriti 01/13/2024
 #source("/home/rstudio/data/Rscripts/Working/FIAdb_connect.R")
 if (exists("con")) {warning("The connection already exists") #Aakriti 09/10/2024
 }else{
-  con <- FIAdb_connect()
+  con <- dbConnect(drv= RPostgres::Postgres(),
+                            dbname= dbname,
+                            port=5432,
+                            user="postgres",
+                            password="FIADB_Direct")
 }
 source(file.path(data_path,"getQuery.R"))#Aakriti 01/13/2024
 #source("/media/rstudio/data/Rscripts/Working/getQuery.R")

@@ -1,3 +1,4 @@
+# Change this path to match the installation of FIADB_Direct on your system
 data_path = file.path("D:/temp/FIADB_Direct/Working/")
 source(file.path(file.path(data_path,'FIADB_Direct_source_all.R'))) 
 

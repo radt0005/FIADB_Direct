@@ -21,8 +21,8 @@ fvs_variant   VARCHAR(2),
 fvs_loc_cd    INTEGER,
 fvs_region    INTEGER,
 fvs_forest    INTEGER,
+eco_unit_pnw  DOUBLE PRECISION,
 fvs_district  INTEGER,
-eco_unit_pnw  VARCHAR(10),
 precipitation DOUBLE PRECISION
 );
 create index PLOTGEOM_IDX on FS_FIADB.PLOTGEOM (STATECD, INVYR, UNITCD, COUNTYCD, PLOT);

@@ -16,6 +16,7 @@ created_date     TIMESTAMP(0),
 modified_date    TIMESTAMP(0),
 sql_select       VARCHAR(4000),
 sql_join         VARCHAR(4000),
-sql_groupby      VARCHAR(4000)
+sql_groupby      VARCHAR(4000),
+sql_alias        VARCHAR(4000)
 );
 alter table FS_FIADB.EVALIDATOR_VARIABLE_LIBRARY add constraint EVL_PK primary key (LABEL_VAR);

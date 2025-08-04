@@ -11,8 +11,8 @@ setwd(path.expand('C:\\Users\\pradtke\\Rscripts\\test'))
 # can use testdb for beta installation and fiadb for alpha
 dbname <- 'fiadb'
 # use the state postal abbreviation or 'ENTIRE' for all states
-# tested for VA and DE
-state_abbr <- 'DE'
+# tested for VA and DE -- you an enter multiple state codes below like c('DE','VA')
+state_abbr <- c('DE')
 
 
 
@@ -214,7 +214,14 @@ if (any(tables_in_sqlite %in% tables_in_oracle)) {
   stop('field(s) in SQlite not in Oracle guide')
   
   print(comp[is.na(comp$OWNER) & (comp$TABLE_NAME %in% tables_in_oracle),])
-  
+  # if there are, here's the likely fix
+  #               save /makeTableScripts/Data/data_types.csv -> data_types_old.csv
+  #               note the table names in tables_in_sqlite ex. "REF_DIFFERENCE_TEST_PER_ACRE"
+  #               note what's in type_guide[type_guide$TABLE_NAME == "REF_DIFFERENCE_TEST_PER_ACRE",]
+  #               note what's in sql_tables[sql_tables$TABLE_NAME == "REF_DIFFERENCE_TEST_PER_ACRE",]
+  #               compare the two (type_guide vs sql_tables) and... 
+  #                               modify /makeTableScripts/Data/data_types.csv accordingly 
+  #               save /makeTableScripts/Data/data_types.csv
 }
 
 # these are entries that are in oracle but not in sqlite
